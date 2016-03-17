@@ -20,7 +20,19 @@ struct node {
 	int digit2;
 	struct node *next;
 };
-
-int convert_sll_2digit_to_int(struct node *head){
-	return 0;
+int convert_sll_2digit_to_int(struct node *head)
+{
+	int num = 0;
+	struct node *temp;
+	temp = head;
+	while (temp != NULL)
+	{
+		printf("load values are%d\t%d\n", temp->digit1, temp->digit2);
+		num = num + (10 * temp->digit1) + (temp->digit2);
+		printf("n value is %d\n", num);
+		temp = temp->next;
+		num = num * 100;
+	}
+	num = num / 100;
+	return num;
 }
